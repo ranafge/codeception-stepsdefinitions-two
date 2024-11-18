@@ -1,0 +1,11 @@
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+            url: http://localhost/wordpress
+            browser: chrome
+            host: localhost
+            # port: 4444
+
+
+
