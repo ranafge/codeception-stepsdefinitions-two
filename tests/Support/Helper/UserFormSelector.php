@@ -4,6 +4,7 @@ namespace Tests\Support\Helper;
 
 class UserFormSelector
 {
+
     // Define the selectors as constants or public static properties
     const WP_LOGIN_PAGE = "/wp-login.php";
     const WP_USERNAME_FIELD = "#user_login";

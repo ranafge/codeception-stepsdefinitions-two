@@ -4,39 +4,33 @@ namespace Tests\Support\StepDefinitions;
 
 use Tests\Support\Helper\UserFormSelector;
 
-trait UserFormMandatoryFieldValidationSteps {
 
-  /**
- * @Given I am on the User Form page
- */
-public function iAmOnTheUserFormPage()
+trait UserFormMandatoryFieldValidationSteps
 {
-    $this->amOnPage('/wp-admin/options-general.php?page=qa-test-settings');
-}
 
- 
-
-   /**
-    * @When I leave all required fields empty
-    */
-    public function iLeaveAllRequiredFieldsEmpty()
-    {
-        $this->fillField('#qa_test_fullname', '');
-    }
-
-   /**
-    * @When I click the :arg1 button
-    */
+   
+    /**
+     * @When I click the :arg1 button
+     */
     public function iClickTheButton($arg1)
     {
-       $this->click(UserFormSelector::SAVE_CHANGES_BUTTON);
+        $this->amOnPage(UserFormSelector::WP_LOGIN_PAGE);
+        $this->fillField(UserFormSelector::WP_USERNAME_FIELD, UserFormSelector::WP_LOGIN_USERNAME);
+        $this->fillField(UserFormSelector::WP_LOGIN_PASSWORD_FIELD, UserFormSelector::WP_LOING_PASSWORD);
+        $this->click(UserFormSelector::WP_LOGIN_BUTTON);
+        $this->amOnPage("/wp-admin/options-general.php?page=qa-test-settings");
+        $this->fillField(UserFormSelector::FULL_NAME_FIELD, "");
+        $this->fillField(UserFormSelector::ADDRESS_FIELD, "");
+        $this->click(UserFormSelector::SAVE_CHANGES_BUTTON); // Ensure this constant is correct
     }
 
-   /**
-    * @Then I should see :arg1
-    */
-    public function iShouldSee($arg1)
+    /**
+     * @Then I should see
+     */
+    public function iShouldSee()
     {
-        $this->see("Full name is required field.");
+
+        $this->see("Full Name is a required field");
+        $this->see("Address is a required field");
     }
 }

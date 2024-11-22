@@ -5,8 +5,10 @@ paths:
     output: tests/_output
     data: tests/Support/Data
     support: tests/Support
-    helper: tests/Helper
+    helper: tests/Support/Helper
     envs: tests/_envs
+
+
 actor_suffix: Tester
 extensions:
     enabled:
@@ -14,3 +16,11 @@ extensions:
         # - Codeception\Module\Gherkin
     context:
     - Tests\Acceptance\UserFormMandatoryFieldValidation
+
+
+coverage:
+    enabled: true
+    include:
+        - app/*
+    exclude:
+        - app/cache/*

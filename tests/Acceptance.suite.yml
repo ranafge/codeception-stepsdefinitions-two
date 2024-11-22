@@ -5,7 +5,8 @@ modules:
             url: http://localhost/wordpress
             browser: chrome
             host: localhost
-            # port: 4444
+        - \Tests\Support\Helper\Wp_login
+
 
 
 

@@ -28,11 +28,13 @@ use SebastianBergmann\CodeCoverage\Driver\Selector;
 
 
  use Tests\Support\StepDefinitions\UserFormMandatoryFieldValidationSteps;
+
 class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
 
     use UserFormMandatoryFieldValidationSteps;
+   
 
 
 
