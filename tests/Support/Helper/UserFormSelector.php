@@ -12,7 +12,7 @@ class UserFormSelector
     const WP_LOGIN_PASSWORD_FIELD = "#user_pass";
     const WP_LOING_PASSWORD = "Pass1234@";
     const WP_LOGIN_BUTTON = "#wp-submit";
-    const FULL_NAME_FIELD = '#qa_test_fullname';
+    const FULL_NAME_FIELD = 'input#qa_test_fullname';
     const FULL_NAME = "Jhon";
     const NICK_NAME_FIELD = '#qa_test_nickname';
     const NICK_NAME = "Doe";

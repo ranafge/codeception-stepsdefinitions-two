@@ -13,7 +13,7 @@ actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
-        # - Codeception\Module\Gherkin
+        - tests\_extensions\MyCustomExtension
     context:
     - Tests\Acceptance\UserFormMandatoryFieldValidation
 
@@ -24,3 +24,8 @@ coverage:
         - app/*
     exclude:
         - app/cache/*
+gherkin:
+  filters:
+    exclude:
+      - '@skip'
+

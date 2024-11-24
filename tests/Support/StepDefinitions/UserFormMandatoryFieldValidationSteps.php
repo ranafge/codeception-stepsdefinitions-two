@@ -3,7 +3,8 @@
 namespace Tests\Support\StepDefinitions;
 
 use Tests\Support\Helper\UserFormSelector;
-
+use Codeception\Attribute\Skip;
+use Codeception\Scenario;
 
 trait UserFormMandatoryFieldValidationSteps
 {
@@ -12,8 +13,10 @@ trait UserFormMandatoryFieldValidationSteps
     /**
      * @When I click the :arg1 button
      */
+  
     public function iClickTheButton($arg1)
     {
+        
         $this->amOnPage(UserFormSelector::WP_LOGIN_PAGE);
         $this->fillField(UserFormSelector::WP_USERNAME_FIELD, UserFormSelector::WP_LOGIN_USERNAME);
         $this->fillField(UserFormSelector::WP_LOGIN_PASSWORD_FIELD, UserFormSelector::WP_LOING_PASSWORD);
@@ -29,7 +32,7 @@ trait UserFormMandatoryFieldValidationSteps
      */
     public function iShouldSee()
     {
-
+        
         $this->see("Full Name is a required field");
         $this->see("Address is a required field");
     }

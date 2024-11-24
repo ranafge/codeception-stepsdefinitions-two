@@ -1,0 +1,10 @@
+modules:
+    config:
+        WebDriver:
+            browser: 'firefox'
+            window_size: maximize
+            capabilities:
+                moz:firefoxOptions:
+                    args:
+                        - -profile
+                        - /home/rana/snap/firefox/common/.mozilla/firefox/c2e9066e.default
