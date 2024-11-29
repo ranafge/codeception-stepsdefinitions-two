@@ -45,7 +45,7 @@ class AcceptanceTester extends \Codeception\Actor
     {
         $this->amOnPage(UserFormSelector::WP_LOGIN_PAGE);
         $this->fillField(UserFormSelector::WP_USERNAME_FIELD, UserFormSelector::WP_LOGIN_USERNAME);
-        $this->fillField(UserFormSelector::WP_LOGIN_PASSWORD_FIELD, UserFormSelector::WP_LOING_PASSWORD);
+        $this->fillField(UserFormSelector::WP_LOGIN_PASSWORD_FIELD, UserFormSelector::WP_LOGIN_PASSWORD);
         $this->click(UserFormSelector::WP_LOGIN_BUTTON);
         $this->amOnPage("/wp-admin/options-general.php?page=qa-test-settings");
     }

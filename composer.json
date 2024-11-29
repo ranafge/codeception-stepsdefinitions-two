@@ -10,7 +10,8 @@
   "autoload": {
     "psr-4": {
       "Tests\\Support\\": "tests/Support/",
-      "tests\\_extensions\\": "tests/_extensions/"
+      "tests\\_extensions\\": "tests/_extensions/",
+      "Tests\\": "tests/"
     }
   }
 }

@@ -6,13 +6,17 @@ namespace Tests\Functional;
 use Tests\Support\FunctionalTester;
 use Codeception\Scenario;
 use Codeception\Attribute\Incomplete;
+use Tests\Support\Helper\UserFormSelector;
 
 class UserDBCrudOperationCest
 {
     public function _before(FunctionalTester $I)
     {
         // codecept_debug($scenarion->current("env"));
-        $I->loginWpAdmin();
+        $I->amOnPage(UserFormSelector::WP_LOGIN_PAGE);
+        $I->fillField(UserFormSelector::WP_USERNAME_FIELD, UserFormSelector::WP_LOGIN_USERNAME);
+        $I->fillField(UserFormSelector::WP_LOGIN_PASSWORD_FIELD,  UserFormSelector::WP_LOGIN_PASSWORD);
+        $I->click(UserFormSelector::WP_LOGIN_BUTTON);
     }
 
     // tests

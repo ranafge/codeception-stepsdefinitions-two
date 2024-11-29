@@ -8,17 +8,9 @@ use Tests\Support\Helper;
 
 
 class UserFormCest
-{   
-    public function _before(AcceptanceTester $I)
-    {
-        
-        $I->loginWpAdmin();
-    
-        
-    }
+{
+    public function _before(AcceptanceTester $I) {}
 
     // tests
-    public function tryToTest(AcceptanceTester $I)
-    {
-    }
+    public function tryToTest(AcceptanceTester $I) {}
 }

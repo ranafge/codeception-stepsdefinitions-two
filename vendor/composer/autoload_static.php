@@ -31,6 +31,7 @@ class ComposerStaticInit3aa8807de7f4f7e79d809f17e0f890b4
         'T' => 
         array (
             'Tests\\Support\\' => 14,
+            'Tests\\' => 6,
         ),
         'S' => 
         array (
@@ -93,6 +94,10 @@ class ComposerStaticInit3aa8807de7f4f7e79d809f17e0f890b4
         'Tests\\Support\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests/Support',
+        ),
+        'Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (

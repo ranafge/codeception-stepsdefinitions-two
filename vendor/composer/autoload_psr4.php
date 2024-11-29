@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'tests\\_extensions\\' => array($baseDir . '/tests/_extensions'),
     'Tests\\Support\\' => array($baseDir . '/tests/Support'),
+    'Tests\\' => array($baseDir . '/tests'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Intl\\Normalizer\\' => array($vendorDir . '/symfony/polyfill-intl-normalizer'),
     'Symfony\\Polyfill\\Intl\\Grapheme\\' => array($vendorDir . '/symfony/polyfill-intl-grapheme'),
