@@ -89,3 +89,4 @@ echo "ADD " . $newCal->add(22, 22);
 echo "reverse string of 'hello' is : " . $newCal->reversedAString('hello');
 echo "prime is : " . $newCal->isPrime(10);
 echo "fac ". $newCal->factorial(3);
+echo "This echo for change github action";
