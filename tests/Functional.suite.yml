@@ -4,6 +4,7 @@
 # Emulate web requests and make application process them
 # Include one of framework modules (Symfony, Yii2, Laravel, Phalcon5) to use it
 # Remove this suite if you don't use frameworks
+#Functional.suite.yml
 
 actor: FunctionalTester
 modules:
