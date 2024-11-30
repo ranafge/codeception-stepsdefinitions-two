@@ -1,4 +1,7 @@
 {
+  "name": "my-vendor/my-project", 
+  "description": "A short description of my project.", 
+  "license": "MIT", 
   "require-dev": {
     "codeception/codeception": "^5.1",
     "codeception/module-phpbrowser": "*",
