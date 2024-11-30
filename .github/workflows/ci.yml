@@ -1,4 +1,4 @@
-name: Codeception Tests
+name: CI
 
 on:
   pull_request:
@@ -17,6 +17,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      # Fix repository ownership issues
+      - name: Configure Git Safe Directory
+        run: git config --global --add safe.directory /github/workspace
+
       # Install PHP with required extensions
       - name: Install PHP
         uses: shivammathur/setup-php@v2
@@ -31,15 +35,18 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate
 
-      # Run Composer Update to Ensure Lock File is Correct (Temporary Step)
-      - name: Update Composer Dependencies
-        run: composer update
-        env:
-          COMPOSER_MEMORY_LIMIT: -1
-
       # Install dependencies
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-interaction --no-suggest
+        env:
+          COMPOSER_MEMORY_LIMIT: -1
+
+      # Run Composer Update (Fallback, if install fails due to lock file issues)
+      - name: Update Composer Dependencies (Fallback Step)
+        if: failure()
+        run: composer update
+        env:
+          COMPOSER_MEMORY_LIMIT: -1
 
       # Run the Codeception tests
       - name: Run tests
