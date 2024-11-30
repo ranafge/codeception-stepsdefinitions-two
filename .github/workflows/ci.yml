@@ -51,3 +51,6 @@ jobs:
       # Run the Codeception tests
       - name: Run tests
         run: php vendor/bin/codecept run
+      - name: Clear Composer Cache
+        run: composer clear-cache
+
