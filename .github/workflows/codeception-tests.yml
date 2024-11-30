@@ -1,15 +1,15 @@
 name: Codeception Tests
 
 on:
-  push:
+  pull_request:
     branches-ignore:
       - gh-pages
-  pull_request:
+  push:
     branches-ignore:
       - gh-pages
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     services:
@@ -29,14 +29,15 @@ jobs:
           --health-retries=5
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: 8.1.12
           extensions: curl, mbstring, openssl, pdo, pdo_sqlite
+          ini-values: memory_limit=-1, date.timezone='UTC'
           coverage: xdebug
           tools: composer:v2
 
@@ -48,7 +49,3 @@ jobs:
 
       - name: Run tests
         run: php vendor/bin/codecept run
-        env:
-          DB_DSN: mysql:host=127.0.0.1;dbname=wordpress_test
-          DB_USER: rana
-          DB_PASS: Pass1234@
