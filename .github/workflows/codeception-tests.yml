@@ -12,15 +12,42 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wordpress_test
+          MYSQL_USER: rana
+          MYSQL_PASSWORD: Pass1234@
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Wait for MySQL to be ready
+        run: |
+          for i in {1..30}; do
+            if mysqladmin ping -h127.0.0.1 --silent; then
+              echo "MySQL is ready"
+              break
+            fi
+            echo "Waiting for MySQL..."
+            sleep 2
+          done
+
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1.12  # Specify the PHP version here
-          extensions: curl, mbstring, openssl, pdo, pdo_sqlite
+          php-version: 8.1.12
+          extensions: curl, mbstring, openssl, pdo, pdo_mysql
           ini-values: memory_limit=-1, date.timezone='UTC'
           coverage: xdebug
           tools: composer:v2
@@ -32,4 +59,10 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-interaction --no-suggest
 
       - name: Run tests
+        env:
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: wordpress_test
+          DB_USERNAME: rana
+          DB_PASSWORD: Pass1234@
         run: php vendor/bin/codecept run
