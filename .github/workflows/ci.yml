@@ -1,4 +1,4 @@
-name: CI
+name: Codeception Tests
 
 on:
   pull_request:
@@ -20,13 +20,10 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.1
-          extensions: curl, mbstring, openssl, pdo, pdo_sqlite
+          extensions: curl, mbstring, openssl, pdo, pdo_sqlite, zip
           ini-values: memory_limit=-1, date.timezone='UTC'
           coverage: xdebug
           tools: composer:v2
-
-      - name: Install Composer
-        uses: php-actions/composer@v6
 
       - name: Validate composer.json and composer.lock
         run: composer validate
