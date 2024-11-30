@@ -20,7 +20,7 @@ class CalculatorTest extends \Codeception\Test\Unit
     }
     public function testMultiplyFunctionality()
     {
-        $this->assertEquals(4, $this->calculator->multiply(3, 1));
+        $this->assertEquals(3, $this->calculator->multiply(3, 1));
     }
 
     public function testZeroDivitionFunctionality()
