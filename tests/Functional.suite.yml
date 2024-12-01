@@ -13,9 +13,9 @@ modules:
             url: http://localhost/wordpress
             browser: chrome
         - Db:
-            dsn: 'mysql:host=localhost;dbname=wordpress_test'
-            user: 'rana'
-            password: 'Pass1234@'
+            dsn: 'mysql:host=127.0.0.1;port=3306;dbname=wordpress_test'
+            user: 'root'
+            password: ''
             cleanup: true
             populator: 'mysql -u $user $dbname < tests/Support/Data/dump.sql'  
         - \Tests\Support\Helper\Wp_login

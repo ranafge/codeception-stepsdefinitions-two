@@ -7,7 +7,7 @@ modules:
         host: localhost
     - Tests\Support\Helper\Wp_login
     - Db:
-        dsn: 'mysql:host=localhost;dbname=wordpress_test'
+        dsn: 'mysql:host=127.0.0.1;port=3306;dbname=wordpress_test'
         user: 'root'
         password: ''
         cleanup: true
