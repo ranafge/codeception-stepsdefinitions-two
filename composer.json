@@ -16,5 +16,9 @@
       "tests\\_extensions\\": "tests/_extensions/",
       "Tests\\": "tests/"
     }
+  },
+  "require": {
+    "phpunit/php-invoker": "^5.0",
+    "phpunit/php-text-template": "^4.0"
   }
 }

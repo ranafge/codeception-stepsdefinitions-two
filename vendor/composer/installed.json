@@ -4606,8 +4606,6 @@
         "php-webdriver/webdriver",
         "phpunit/php-code-coverage",
         "phpunit/php-file-iterator",
-        "phpunit/php-invoker",
-        "phpunit/php-text-template",
         "phpunit/php-timer",
         "phpunit/phpunit",
         "psr/container",

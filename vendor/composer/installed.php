@@ -3,7 +3,7 @@
         'name' => 'my-vendor/my-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e42c388efeb6cb7ed09762d0b9d7282e512ce290',
+        'reference' => 'd5cb34a5fd69358a9e71f288794b61b28ee6677b',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -151,7 +151,7 @@
         'my-vendor/my-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e42c388efeb6cb7ed09762d0b9d7282e512ce290',
+            'reference' => 'd5cb34a5fd69358a9e71f288794b61b28ee6677b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -227,7 +227,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/php-invoker',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'phpunit/php-text-template' => array(
             'pretty_version' => '4.0.1',
@@ -236,7 +236,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/php-text-template',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'phpunit/php-timer' => array(
             'pretty_version' => '7.0.1',
