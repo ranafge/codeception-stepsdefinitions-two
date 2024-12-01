@@ -20,7 +20,7 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: wordpress_test
-        # No MYSQL_USER or MYSQL_PASSWORD is needed for root access
+        # Ensure that MYSQL_USER and MYSQL_PASSWORD are not being set to root, because root user access is defined by MYSQL_ROOT_PASSWORD
 
     steps:
       - name: Checkout Code
