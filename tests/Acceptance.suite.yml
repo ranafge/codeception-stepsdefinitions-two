@@ -7,9 +7,12 @@ modules:
         host: localhost
     - Tests\Support\Helper\Wp_login
     - Db:
-        dsn: 'mysql:host=localhost;dbname=test_db'
+        dsn: 'mysql:host=localhost;dbname=wordpress_test'
         user: 'root'
-        password: 'root_password'
+        password: ''
         cleanup: true
         populate: true
         reconnect: true
+
+# CREATE USER "rana"@"localhost" IDENTIFIED BY "Pass1234@";
+# GRANT ALL PRIVILEGES ON wordpress_test.* TO "rana"@"localhost";
