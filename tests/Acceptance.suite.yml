@@ -6,3 +6,10 @@ modules:
         browser: chrome
         host: localhost
     - Tests\Support\Helper\Wp_login
+    - Db:
+        dsn: 'mysql:host=localhost;dbname=test_db'
+        user: 'root'
+        password: 'root_password'
+        cleanup: true
+        populate: true
+        reconnect: true
