@@ -18,10 +18,9 @@ jobs:
         ports:
           - 3306:3306
         env:
-          MYSQL_ROOT_PASSWORD: "Pass1234@"
+          MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: wordpress_test
-          MYSQL_USER: root
-          MYSQL_PASSWORD: "Pass1234@"
+        # Removed MYSQL_USER and MYSQL_PASSWORD for the root user.
 
     steps:
       - name: Checkout Code
@@ -37,7 +36,7 @@ jobs:
       - name: Wait for MySQL
         run: |
           for i in {1..30}; do
-            if mysqladmin ping -h localhost --silent; then
+            if mysqladmin ping -h 127.0.0.1 --user=root --password=root --silent; then
               echo "MySQL is ready"
               break
             fi
@@ -53,7 +52,7 @@ jobs:
 
       - name: Run Codeception Tests
         env:
-          DB_DSN: 'mysql:host=localhost;dbname=wordpress_test'
+          DB_DSN: 'mysql:host=127.0.0.1;dbname=wordpress_test'
           DB_USER: 'root'
-          DB_PASS: 'Pass1234@'
+          DB_PASS: 'root'
         run: php vendor/bin/codecept run
