@@ -7,7 +7,7 @@ modules:
         host: localhost
     - Tests\Support\Helper\Wp_login
     - Db:
-        dsn: 'mysql:host=localhost;port=3306;dbname=wordpress_test'
+        dsn: 'mysql:host=localhost;dbname=wordpress_test'
         user: 'root'
         password: 'Pass1234@'
         cleanup: true
@@ -16,3 +16,4 @@ modules:
 
 # CREATE USER "rana"@"localhost" IDENTIFIED BY "Pass1234@";
 # GRANT ALL PRIVILEGES ON wordpress_test.* TO "rana"@"localhost";
+# UPDATE mysql.user SET Password=PASSWORD('Pass1234@') WHERE User='root';

@@ -13,7 +13,7 @@ modules:
             url: http://localhost/wordpress
             browser: chrome
         - Db:
-            dsn: 'mysql:host=localhost;port=3306;dbname=wordpress_test'
+            dsn: 'mysql:host=localhost;dbname=wordpress_test'
             user: 'root'
             password: 'Pass1234@'
             cleanup: true
