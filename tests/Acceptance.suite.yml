@@ -17,3 +17,7 @@ modules:
 # CREATE USER "rana"@"localhost" IDENTIFIED BY "Pass1234@";
 # GRANT ALL PRIVILEGES ON wordpress_test.* TO "rana"@"localhost";
 # UPDATE mysql.user SET Password=PASSWORD('Pass1234@') WHERE User='root';
+
+# TESTOMATIO={tstmt_ljENTfNtzF0jZI2zxKkjXyCBxL-gZSOc9Q1730205993} TESTOMATIO_TITLE="Build $BUILDID" ./vendor/bin/codecept run --shard 3/4
+
+# TESTOMATIO=tstmt_ljENTfNtzF0jZI2zxKkjXyCBxL-gZSOc9Q1730205993 php vendor/bin/list-tests tests

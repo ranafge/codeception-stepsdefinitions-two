@@ -19,6 +19,7 @@ class ComposerStaticInite4edc0a7e3d157991bc6f95ea466f425
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'e3b2795a8a512b6083af088fb53afe6c' => __DIR__ . '/..' . '/codeception/codeception/functions.php',
+        'fe1d4898277c26748a003292f432cd3b' => __DIR__ . '/..' . '/jetbrains/phpstorm-stubs/PhpStormStubsMap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '2a3c2110e8e0295330dc3d11a4cbc4cb' => __DIR__ . '/..' . '/php-webdriver/webdriver/lib/Exception/TimeoutException.php',
     );
@@ -32,6 +33,7 @@ class ComposerStaticInite4edc0a7e3d157991bc6f95ea466f425
         array (
             'Tests\\Support\\' => 14,
             'Tests\\' => 6,
+            'Testomatio\\' => 11,
         ),
         'S' => 
         array (
@@ -51,6 +53,11 @@ class ComposerStaticInite4edc0a7e3d157991bc6f95ea466f425
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\BrowserKit\\' => 29,
+            'Spatie\\Emoji\\' => 13,
+        ),
+        'R' => 
+        array (
+            'Roave\\BetterReflection\\' => 23,
         ),
         'P' => 
         array (
@@ -98,6 +105,10 @@ class ComposerStaticInite4edc0a7e3d157991bc6f95ea466f425
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'Testomatio\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/testomatio/list-tests/src',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -163,6 +174,14 @@ class ComposerStaticInite4edc0a7e3d157991bc6f95ea466f425
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
+        'Spatie\\Emoji\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/emoji/src',
+        ),
+        'Roave\\BetterReflection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/roave/better-reflection/src',
+        ),
         'Psy\\' => 
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src',
@@ -224,6 +243,13 @@ class ComposerStaticInite4edc0a7e3d157991bc6f95ea466f425
     );
 
     public static $prefixesPsr0 = array (
+        'H' => 
+        array (
+            'Httpful' => 
+            array (
+                0 => __DIR__ . '/..' . '/nategood/httpful/src',
+            ),
+        ),
         'B' => 
         array (
             'Behat\\Gherkin' => 

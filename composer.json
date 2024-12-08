@@ -1,14 +1,15 @@
 {
-  "name": "my-vendor/my-project", 
-  "description": "A short description of my project.", 
-  "license": "MIT", 
+  "name": "my-vendor/my-project",
+  "description": "A short description of my project.",
+  "license": "MIT",
   "require-dev": {
     "codeception/codeception": "^5.1",
     "codeception/module-phpbrowser": "*",
     "codeception/module-asserts": "*",
     "codeception/module-webdriver": "^4.0",
     "phpunit/php-code-coverage": "^11.0",
-    "codeception/module-db": "^3.1"
+    "codeception/module-db": "^3.1",
+    "testomatio/list-tests": "^0.2.5"
   },
   "autoload": {
     "psr-4": {
@@ -16,9 +17,5 @@
       "tests\\_extensions\\": "tests/_extensions/",
       "Tests\\": "tests/"
     }
-  },
-  "require": {
-    "phpunit/php-invoker": "^5.0",
-    "phpunit/php-text-template": "^4.0"
   }
 }
