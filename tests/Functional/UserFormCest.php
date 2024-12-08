@@ -3,26 +3,24 @@
 
 namespace Tests\Functional;
 
+
 use Tests\Support\FunctionalTester;
 use Tests\Support\Helper\UserFormSelector;
-use Codeception\Attribute\Skip;
-use Codeception\Scenario;
+use Codeception\Attribute\Group;
 
-class AdvanceExampleCest
+class UserFormCest
 {
-    #[Skip]
     public function _before(FunctionalTester $I) {}
 
     // tests
-    public function tryToTest(FunctionalTester $I)
-    {
-        // codecept_debug($scenarion->current("env"));
+    public function tryToTest(FunctionalTester $I) {}
+
+    #[Group('Admin')]
+    #[Group("editor")]
+    public function example(FunctionalTester $I) {
         $I->amOnPage(UserFormSelector::WP_LOGIN_PAGE);
         $I->fillField(UserFormSelector::WP_USERNAME_FIELD, UserFormSelector::WP_LOGIN_USERNAME);
         $I->fillField(UserFormSelector::WP_LOGIN_PASSWORD_FIELD,  UserFormSelector::WP_LOGIN_PASSWORD);
         $I->click(UserFormSelector::WP_LOGIN_BUTTON);
     }
-
-    #[Skip("This is not needed anymore.")]
-    public function notImportantTest(FunctionalTester $I) {}
 }
